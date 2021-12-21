@@ -1,0 +1,12 @@
+PKGDIR ?= ../..
+L4DIR  ?= /home/beleg/l4re/src/l4
+O 	   ?= /home/beleg/l4re/obj/l4/arm64
+TARGET = $(PKGNAME)_context.a $(PKGNAME)_context.p.a
+SRC_C  = context.c
+PC_FILENAME = $(PKGNAME)_context
+CFLAGS += -I$(PKGDIR)/include/
+
+REQUIRES_LIBS = libossl_threads libossl_ex_data libossl_provider
+DEPENDS_LIBS = $(REQUIRES_LIBS)
+include $(L4DIR)/mk/lib.mk
+
