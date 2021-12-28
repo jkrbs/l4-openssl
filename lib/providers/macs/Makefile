@@ -6,7 +6,7 @@ SRC_C  = blake2b_mac.c blake2s_mac.c cmac_prov.c gmac_prov.c hmac_prov.c kmac_pr
 PC_FILENAME = $(PKGNAME)_macs
 CFLAGS += -I$(PKGDIR)/include/
 
-REQUIRES_LIBS =  libossl_sm3 libossl_siphash libossl_poly1305 libossl_prov_common libossl_hmac libossl_ssl
+REQUIRES_LIBS =  libossl_sm3 libossl_siphash libossl_poly1305 libossl_prov_common libossl_hmac libossl_ssl libossl_cmac
 DEPENDS_LIBS = $(REQUIRES_LIBS)
 include $(L4DIR)/mk/lib.mk
 
