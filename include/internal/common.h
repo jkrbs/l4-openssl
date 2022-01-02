@@ -54,13 +54,12 @@ static inline int ossl_assert_int(int expr, const char *exprstr,
     void *align_ptr
 
 # define OPENSSL_CONF             "openssl.cnf"
-
 # ifndef OPENSSL_SYS_VMS
-#  define X509_CERT_AREA          OPENSSLDIR
-#  define X509_CERT_DIR           OPENSSLDIR "/certs"
-#  define X509_CERT_FILE          OPENSSLDIR "/cert.pem"
-#  define X509_PRIVATE_DIR        OPENSSLDIR "/private"
-#  define CTLOG_FILE              OPENSSLDIR "/ct_log_list.cnf"
+#  define X509_CERT_AREA           "/" 
+#  define X509_CERT_DIR            "/certs"
+#  define X509_CERT_FILE           "/cert.pem"
+#  define X509_PRIVATE_DIR         "/private"
+#  define CTLOG_FILE               "/ct_log_list.cnf"
 # else
 #  define X509_CERT_AREA          "OSSL$DATAROOT:[000000]"
 #  define X509_CERT_DIR           "OSSL$DATAROOT:[CERTS]"
