@@ -6,7 +6,7 @@ SRC_C  = err_all.c err_all_legacy.c err_blocks.c err.c err_prn.c
 PC_FILENAME = $(PKGNAME)_err
 CFLAGS += -I$(PKGDIR)/include/
 
-REQUIRES_LIBS = libossl_threads libossl_fips
+REQUIRES_LIBS = libossl_threads libossl_fips libossl_pem libossl_conf libossl_comp
 DEPENDS_LIBS = $(REQUIRES_LIBS)
 
 include $(L4DIR)/mk/lib.mk

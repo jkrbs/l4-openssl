@@ -7,7 +7,7 @@ SRC_C  = cipher_aes.c cipher_aria_ccm.c ciphercommon_ccm_hw.c cipher_aes_cbc_hma
 PC_FILENAME = $(PKGNAME)_cipher
 CFLAGS += -I$(PKGDIR)/include/
 
-REQUIRES_LIBS = libossl_aria libossl_modes
+REQUIRES_LIBS = libossl_aria libossl_modes libossl_des libossl_macs
 DEPENDS_LIBS = $(REQUIRES_LIBS)
 include $(L4DIR)/mk/lib.mk
 

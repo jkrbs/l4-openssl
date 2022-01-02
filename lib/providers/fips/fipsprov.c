@@ -762,7 +762,7 @@ int ossl_fips_intern_provider_init(const OSSL_CORE_HANDLE *handle,
     *out = intern_dispatch_table;
     return 1;
 }
-
+#if 0
 void ERR_new(void)
 {
     c_new_error(NULL);
@@ -801,7 +801,7 @@ int ERR_pop_to_mark(void)
 {
     return c_pop_error_to_mark(NULL);
 }
-
+#endif
 /*
  * This must take a library context, since it's called from the depths
  * of crypto/initthread.c code, where it's (correctly) assumed that the
@@ -897,6 +897,7 @@ int FIPS_security_check_enabled(OSSL_LIB_CTX *libctx)
     return fgbl->fips_security_checks;
 }
 
+#if 0
 void OSSL_SELF_TEST_get_callback(OSSL_LIB_CTX *libctx, OSSL_CALLBACK **cb,
                                  void **cbarg)
 {
@@ -912,3 +913,4 @@ void OSSL_SELF_TEST_get_callback(OSSL_LIB_CTX *libctx, OSSL_CALLBACK **cb,
             *cbarg = NULL;
     }
 }
+#endif
