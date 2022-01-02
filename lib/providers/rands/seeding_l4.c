@@ -1,10 +1,14 @@
-#include <l4/crypto/random.h>
-
 #include "internal/cryptlib.h"
 #include <openssl/opensslconf.h>
 #include "crypto/rand_pool.h"
 #include "prov/seeding.h"
 
+void crypto_randomize_buf(char* buf, size_t size) {
+    while(size) {
+        buf[size] = rand();
+        size--;
+    }
+}
 
 size_t ossl_prov_acquire_entropy(RAND_POOL * pool) {
     size_t bytes_needed = ossl_rand_pool_bytes_needed(pool, 1);
@@ -25,4 +29,35 @@ size_t ossl_prov_acquire_entropy(RAND_POOL * pool) {
     free(buf);
     }
     return ossl_rand_pool_entropy_available(pool);
+}
+
+size_t ossl_pool_acquire_entropy(RAND_POOL *pool) {
+    return ossl_prov_acquire_entropy(pool);
+}
+
+void ossl_rand_pool_cleanup(void)
+{
+}
+
+void ossl_rand_pool_keep_random_devices_open(int keep)
+{
+    (int)keep;
+}
+
+static int wait_random_seeded(void)
+{
+    return 1;
+}
+
+int ossl_rand_pool_init(void) {
+    return 1;
+}
+
+int ossl_pool_add_nonce_data(RAND_POOL *pool)
+{
+    unsigned char* data[128];
+
+    crypto_randomize_buf(data, sizeof(data));
+
+    return ossl_rand_pool_add(pool, &data, sizeof(data), 0);
 }
