@@ -13,7 +13,7 @@
 #include <openssl/rand.h>
 #include "crypto/ecx.h"
 #include "ec_local.h"
-#include "curve448/curve448_local.h"
+#include "../curve448/curve448_local.h"
 #include "ecx_backend.h"
 #include "s390x_arch.h"
 #include "internal/constant_time.h"

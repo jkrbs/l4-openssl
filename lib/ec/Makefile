@@ -6,8 +6,7 @@ SRC_C  = curve25519.c ec2_oct.c ec2_smpl.c ec_ameth.c ec_asn1.c ec_backend.c ec_
 PC_FILENAME = $(PKGNAME)_ec
 CFLAGS += -I$(PKGDIR)/include/
 
-REQUIRES_LIBS = libossl_bn
-DEPENDS_LIBS = $(REQUIRES_LIBS)
+REQUIRES_LIBS= libossl_bn libossl_curve448 libossl_asn1
 
 include $(L4DIR)/mk/lib.mk
 

@@ -25,7 +25,7 @@
 #include "crypto/evp.h"
 #include "crypto/ecx.h"
 #include "ec_local.h"
-#include "curve448/curve448_local.h"
+#include "../curve448/curve448_local.h"
 #include "ecx_backend.h"
 
 static int ecx_pub_encode(X509_PUBKEY *pk, const EVP_PKEY *pkey)
