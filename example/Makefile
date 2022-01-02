@@ -5,7 +5,7 @@ TARGET = openssl-example
 CFLAGS += -I$(PKGDIR)/../include
 SRC_C = main.c
 
-REQUIRES_LIBS = libossl_conf libossl_evp libossl_core libossl_engine libossl_err libossl_threads
+REQUIRES_LIBS = libossl
 DEPENDS_LIBS = $(REQUIRES_LIBS)
 
 include $(L4DIR)/mk/prog.mk
