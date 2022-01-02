@@ -6,7 +6,7 @@ SRC_C  = dh_ameth.c dh_asn1.c dh_backend.c dh_check.c dh_depr.c dh_err.c dh_gen.
 PC_FILENAME = $(PKGNAME)_dh
 CFLAGS += -I$(PKGDIR)/include/
 
-REQUIRES_LIBS = libossl_bn libossl_ffc libossl_evp libossl_rsa
+REQUIRES_LIBS = libossl_bn libossl_ffc libossl_evp libossl_rsa libossl_evp
 DEPENDS_LIBS = $(REQUIRES_LIBS)
 
 include $(L4DIR)/mk/lib.mk

@@ -5,5 +5,9 @@ TARGET = $(PKGNAME)_conf.a $(PKGNAME)_conf.p.a
 SRC_C  = conf_def.c  conf_lib.c    conf_mod.c conf_sap.c conf_api.c  conf_err.c  conf_mall.c   conf_ssl.c
 PC_FILENAME = $(PKGNAME)_conf
 CFLAGS += -I$(PKGDIR)/include/
+
+REQUIRES_LIBS = libossl_err libossl_odir
+DEPENDS_LIBS = $(REQUIRES_LIBS)
+
 include $(L4DIR)/mk/lib.mk
 
